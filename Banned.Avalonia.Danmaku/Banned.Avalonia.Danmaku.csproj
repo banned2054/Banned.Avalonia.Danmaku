@@ -5,6 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>Banned.Avalonia.Danmaku</PackageId>
+    <Version>0.0.1</Version>
     <Title>Banned.Avalonia.Danmaku</Title>
     <Authors>Banned</Authors>
     <Description>Avalonia danmaku control library for rendering Bilibili-style comments over video or layered UI.</Description>

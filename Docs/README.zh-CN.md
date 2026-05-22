@@ -1,6 +1,6 @@
 # Banned.Avalonia.Danmaku
 
-[English](../README.md)
+[English](https://github.com/banned2054/Banned.Avalonia.Danmaku/blob/master/README.md)
 
 用于在视频或任意分层 UI 上渲染 Bilibili 风格弹幕的 Avalonia 弹幕控件库。
 

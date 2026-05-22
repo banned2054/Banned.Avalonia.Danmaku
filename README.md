@@ -1,6 +1,6 @@
 # Banned.Avalonia.Danmaku
 
-[简体中文](Docs/README.zh-CN.md)
+[简体中文](https://github.com/banned2054/Banned.Avalonia.Danmaku/blob/master/Docs/README.zh-CN.md)
 
 Avalonia danmaku control library for rendering Bilibili-style comments over video or any layered UI.
 

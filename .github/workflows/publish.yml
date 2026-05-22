@@ -1,0 +1,38 @@
+name: Build and Push NuGet Package
+
+on:
+    release:
+        types:
+            - created
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v6
+
+            - name: Set up .NET
+              uses: actions/setup-dotnet@v5
+              with:
+                  dotnet-version: "10.0.x"
+
+            - name: Restore dependencies
+              run: dotnet restore Banned.Avalonia.Danmaku/Banned.Avalonia.Danmaku.csproj
+
+            - name: Build the project
+              run: dotnet build Banned.Avalonia.Danmaku/Banned.Avalonia.Danmaku.csproj --configuration Release --no-restore
+
+            - name: Pack the project
+              run: dotnet pack Banned.Avalonia.Danmaku/Banned.Avalonia.Danmaku.csproj --configuration Release --no-build --output nupkg
+
+            - name: Push NuGet package
+              run: |
+                  NUPKG_FILE=$(find nupkg -name "Banned.Avalonia.Danmaku.*.nupkg" -print -quit)
+                  if [ -z "$NUPKG_FILE" ]; then
+                    echo "Error: NuGet package not found!"
+                    exit 1
+                  fi
+                  echo "Pushing $NUPKG_FILE to NuGet..."
+                  dotnet nuget push "$NUPKG_FILE" --api-key ${{ secrets.NUGET_API_KEY }} --source "https://api.nuget.org/v3/index.json" --skip-duplicate
