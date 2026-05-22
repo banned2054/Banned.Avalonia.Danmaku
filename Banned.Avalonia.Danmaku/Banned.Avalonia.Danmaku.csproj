@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>Banned.Avalonia.Danmaku</PackageId>
+    <Title>Banned.Avalonia.Danmaku</Title>
+    <Authors>Banned</Authors>
+    <Description>Avalonia danmaku control library for rendering Bilibili-style comments over video or layered UI.</Description>
+    <PackageTags>avalonia;danmaku;bilibili;comments;overlay</PackageTags>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\NOTICE" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

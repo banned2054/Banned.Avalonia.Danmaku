@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="12.0.3" />
+		<PackageReference Include="Avalonia.Desktop" Version="12.0.3" />
+		<PackageReference Include="Avalonia.Themes.Fluent" Version="12.0.3" />
+		<PackageReference Include="Tmds.DBus.Protocol" Version="0.93.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Banned.Avalonia.Danmaku\Banned.Avalonia.Danmaku.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="Assets\Danmaku\comments.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TargetPath>Danmaku\comments.xml</TargetPath>
+		</None>
+		<None Include="..\LICENSE">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TargetPath>LICENSE</TargetPath>
+		</None>
+		<None Include="..\NOTICE">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TargetPath>NOTICE</TargetPath>
+		</None>
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,116 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Banned.Avalonia.Danmaku.Demo"
+        xmlns:danmaku="clr-namespace:Banned.Avalonia.Danmaku.Controls;assembly=Banned.Avalonia.Danmaku"
+        mc:Ignorable="d"
+        x:Class="Banned.Avalonia.Danmaku.Demo.MainWindow"
+        Title="Banned.Avalonia.Danmaku Demo"
+        Width="1280"
+        Height="720"
+        Background="Black">
+
+    <Grid RowDefinitions="*,Auto,Auto,Auto">
+        <!-- 弹幕显示区域 -->
+        <danmaku:DanmakuView x:Name="DanmakuControl"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch"
+                              IsHitTestVisible="False"
+                              Grid.Row="0" />
+
+        <!-- 进度条区域 -->
+        <Grid Grid.Row="1" ColumnDefinitions="Auto,*,Auto" Margin="10,5">
+            <TextBlock x:Name="CurrentTimeText" Text="00:00" VerticalAlignment="Center" Margin="0,0,10,0"
+                       Foreground="White" />
+            <Grid Grid.Column="1" Margin="0,0,0,0">
+                <local:DanmakuTimeMarker x:Name="TimeMarker" Height="10" VerticalAlignment="Center" Margin="0,0,0,0" />
+                <Slider x:Name="TimeSlider" Minimum="0" Maximum="100"
+                        PointerPressed="TimeSlider_PointerPressed"
+                        PointerReleased="TimeSlider_PointerReleased"
+                        ValueChanged="TimeSlider_ValueChanged" />
+            </Grid>
+            <TextBlock x:Name="TotalTimeText" Grid.Column="2" Text="00:00" VerticalAlignment="Center" Margin="10,0,0,0"
+                       Foreground="White" />
+        </Grid>
+
+        <!-- 控制按钮区域 -->
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="10">
+            <Button x:Name="StartButton"
+                    Content="Start"
+                    Margin="5"
+                    Click="StartButton_Click" />
+            <Button x:Name="PauseButton"
+                    Content="Pause"
+                    Margin="5"
+                    Click="PauseButton_Click" />
+            <Button x:Name="ResumeButton"
+                    Content="Resume"
+                    Margin="5"
+                    Click="ResumeButton_Click" />
+            <Button x:Name="ClearButton"
+                    Content="Clear"
+                    Margin="5"
+                    Click="ClearButton_Click" />
+            <Button x:Name="AddButton"
+                    Content="Add Random"
+                    Margin="5"
+                    Click="AddButton_Click" />
+            <Button x:Name="AutoAddButton"
+                    Content="Auto Add: OFF"
+                    Margin="5"
+                    Click="AutoAddButton_Click" />
+            <Button x:Name="LoadXmlButton"
+                    Content="Load XML"
+                    Margin="5"
+                    Click="LoadXmlButton_Click" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="3"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="10,0,10,10"
+                    Spacing="8">
+            <TextBlock Text="区域" Foreground="White" VerticalAlignment="Center" />
+            <Slider x:Name="DisplayAreaSlider" Width="100" Minimum="10" Maximum="100" Value="100"
+                    ValueChanged="DisplayAreaSlider_ValueChanged" />
+            <TextBlock x:Name="DisplayAreaText" Text="100%" Foreground="White" Width="42" VerticalAlignment="Center" />
+
+            <TextBlock Text="透明" Foreground="White" VerticalAlignment="Center" />
+            <Slider x:Name="OpacitySlider" Width="100" Minimum="5" Maximum="100" Value="100"
+                    ValueChanged="OpacitySlider_ValueChanged" />
+            <TextBlock x:Name="OpacityText" Text="100%" Foreground="White" Width="42" VerticalAlignment="Center" />
+
+            <TextBlock Text="字号" Foreground="White" VerticalAlignment="Center" />
+            <Slider x:Name="FontScaleSlider" Width="100" Minimum="50" Maximum="200" Value="100"
+                    ValueChanged="FontScaleSlider_ValueChanged" />
+            <TextBlock x:Name="FontScaleText" Text="100%" Foreground="White" Width="42" VerticalAlignment="Center" />
+
+            <TextBlock Text="速度" Foreground="White" VerticalAlignment="Center" />
+            <Slider x:Name="SpeedSlider" Width="100" Minimum="25" Maximum="400" Value="100"
+                    ValueChanged="SpeedSlider_ValueChanged" />
+            <TextBlock x:Name="SpeedText" Text="1.00x" Foreground="White" Width="46" VerticalAlignment="Center" />
+
+            <ComboBox x:Name="FontComboBox" Width="118" SelectedIndex="0" SelectionChanged="FontComboBox_SelectionChanged">
+                <ComboBoxItem Content="SimHei" />
+                <ComboBoxItem Content="Microsoft YaHei UI" />
+                <ComboBoxItem Content="Arial" />
+            </ComboBox>
+
+            <CheckBox x:Name="BoldCheckBox" Content="加粗" Foreground="White" IsChecked="True"
+                      Click="BoldCheckBox_Changed" />
+
+            <ComboBox x:Name="EffectComboBox" Width="86" SelectedIndex="0" SelectionChanged="EffectComboBox_SelectionChanged">
+                <ComboBoxItem Content="重墨" />
+                <ComboBoxItem Content="描边" />
+                <ComboBoxItem Content="投影" />
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+
+</Window>

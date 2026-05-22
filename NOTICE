@@ -1,0 +1,22 @@
+Banned.Avalonia.Danmaku
+Copyright (c) Banned
+
+This project is an Avalonia/.NET reimplementation inspired by the Java
+DanmakuFlameMaster project.
+
+Portions of the design, behavior, and demo assets are based on or derived from:
+
+DanmakuFlameMaster
+Copyright (C) 2013-2015 Chen Hui <calmer91@gmail.com>
+Licensed under the Apache License, Version 2.0
+
+The bundled demo file Banned.Avalonia.Danmaku.Demo/Assets/Danmaku/comments.xml
+is copied from DanmakuFlameMaster/Sample/src/main/res/raw/comments.xml.
+
+This project depends on Avalonia.
+
+Avalonia
+Copyright (c) AvaloniaUI OÜ All Rights Reserved
+Licensed under the MIT License
+
+Avalonia is a registered trademark of AvaloniaUI OÜ.

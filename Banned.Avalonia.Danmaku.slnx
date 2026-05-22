@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Banned.Avalonia.Danmaku/Banned.Avalonia.Danmaku.csproj" />
+  <Project Path="Banned.Avalonia.Danmaku.Demo/Banned.Avalonia.Danmaku.Demo.csproj" />
+</Solution>
