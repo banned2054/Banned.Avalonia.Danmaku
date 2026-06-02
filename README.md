@@ -80,6 +80,9 @@ public sealed class DanmakuView : Canvas
     public double DisplayAreaRatio { get; set; }
     public double OpacityRatio { get; set; }
     public double FontScale { get; set; }
+    public double MinimumFontSize { get; set; }
+    public Size ReferenceViewportSize { get; set; }
+    public bool AutoScaleToViewport { get; set; }
     public double ScrollSpeed { get; set; }
     public string FontFamilyName { get; set; }
     public bool IsBold { get; set; }

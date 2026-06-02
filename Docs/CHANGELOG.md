@@ -1,5 +1,33 @@
 # Changelog
 
+## 🚀 Release v0.1.0 — Viewport-Aware Danmaku Scaling
+
+**Release Date:** 2026-06-02
+
+This release improves danmaku rendering behavior when the host viewport changes size, especially for video players that resize dynamically or map the danmaku layer to the actual video area.
+
+---
+
+### ✨ Added
+
+* **Viewport-Based Auto Scaling**
+  - Added `ReferenceViewportSize` for defining the base viewport used by danmaku scaling
+  - Added `AutoScaleToViewport` to automatically scale danmaku rendering from the current `DanmakuView.Bounds`
+  - Scales font size, lane pitch, lane gaps, and scroll timing from the same viewport reference
+
+* **Readable Minimum Font Size**
+  - Added `MinimumFontSize` to keep danmaku readable in small viewports
+  - Applies the minimum size consistently to both text rendering and lane height estimation
+  - Scales text outline and shadow effects from the final rendered font size
+
+### 🔧 Changed
+
+* Updated the package version to `0.1.0`
+* Lowered the minimum Avalonia dependency to `12.0.0` for broader compatibility within Avalonia 12
+* Updated README API listings for the new scaling options
+
+---
+
 ## 🚀 Release v0.0.1 — Initial Avalonia Danmaku Control
 
 **Release Date:** 2026-05-22
